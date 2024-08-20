@@ -23,7 +23,6 @@ sudo installer -pkg AWSCLIV2.pkg -target /
 For Linux:
 
 ```
-
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
 sudo ./aws/install
@@ -34,7 +33,6 @@ Verify Installation:
 Open your terminal or command prompt and run:
 
 ```
-
 aws --version
 ```
 
@@ -47,7 +45,6 @@ Configure AWS CLI with Your Credentials:
 Run the following command:
 
 ```
-
 aws configure
 ```
 Enter the required information:
@@ -62,7 +59,6 @@ Verify Configuration:
 Run the following command to check your AWS identity:
 
 ```
-
 aws sts get-caller-identity
 ```
 This command should return details about your IAM user, confirming that the CLI is configured correctly.
