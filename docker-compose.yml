@@ -15,7 +15,7 @@ services:
       - monitoring
 
   alertmanager:
-    image: prom/alertmanager:latest
+    image: alertmanager:latest
     container_name: alertmanager
     volumes:
       - ./alertmanager/alertmanager.yml:/etc/alertmanager/alertmanager.yml
@@ -37,7 +37,7 @@ services:
       - monitoring
 
   node-exporter:
-    image: prom/node-exporter:latest
+    image: node-exporter:latest
     container_name: node-exporter
     ports:
       - "9100:9100"  # Standard Node Exporter port
@@ -46,7 +46,7 @@ services:
       - monitoring
 
   cadvisor:
-    image: google/cadvisor:latest
+    image: cadvisor:latest
     container_name: cadvisor
     ports:
       - "8081:8081"
