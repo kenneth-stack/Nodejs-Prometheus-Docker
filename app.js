@@ -20,7 +20,7 @@ register.setDefaultLabels({
 // Enable the collection of default metrics
 client.collectDefaultMetrics({ register });
 
-// Example of a custom counter metric
+// Custom counter metric
 const httpRequestCounter = new client.Counter({
   name: 'http_requests_total',
   help: 'Total number of HTTP requests',
