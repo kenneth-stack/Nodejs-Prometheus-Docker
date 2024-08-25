@@ -1,6 +1,6 @@
 FROM node:alpine
 
-WORKDIR /nodejs-docker-aws-ecs
+WORKDIR /Nodejs-Prometheus-Docker
 
 COPY package.json .
 
