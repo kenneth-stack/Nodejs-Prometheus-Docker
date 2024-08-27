@@ -3,8 +3,8 @@ const client = require('prom-client');
 const path = require('path');
 const app = express();
 const hostname = 'localhost'; // Your server IP address
-const port = 3000;
-const alertPort = 9091;
+const port = 5000;
+const alertPort = 9093;
 
 const version = '1.0.0';
 
