@@ -24,4 +24,4 @@ alerting:
         - targets: ['alertmanager:9093']
 
 rule_files:
-  - 'alertmanager.yml'  # Points to your alerting rules file
+  - '../alertmanager/alertmanager.yml'  # Points to your alerting rules file
