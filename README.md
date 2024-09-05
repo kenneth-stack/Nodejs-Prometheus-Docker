@@ -1,6 +1,6 @@
 ## Node.js Web Application with Docker, Prometheus, Grafana, Alertmanager, and Nginx Integration
 
-#Overview
+# Overview
 
 This project demonstrates how to Dockerize a Node.js web application and monitor it using Prometheus, visualize metrics using Grafana, manage alerts with Alertmanager, and reverse proxy the application using Nginx.
 
@@ -46,19 +46,20 @@ Make sure you have the following installed on your machine:
 
 ## Installation
 1. Clone the repository:
-'''bash
+```
 git clone <repository-url>
 cd <repository-folder>
+```
 
 2. Ensure environment variables for Grafana are set in your .env file:
-''''
+```
 GF_SECURITY_ADMIN_USER=admin
 GF_SECURITY_ADMIN_PASSWORD=admin
-''''
-3. Build the Docker image for the Node.js web application:
-''''
+```
+4. Build the Docker image for the Node.js web application:
+```
 docker-compose build
-''''
+```
 
 # Docker Compose Configuration
 Your docker-compose.yml file orchestrates multiple services. Here's a brief overview of each service:
@@ -72,7 +73,7 @@ Your docker-compose.yml file orchestrates multiple services. Here's a brief over
 - Nginx: Acts as a reverse proxy for the web app, exposed on port 80.
 Here is the full docker-compose.yml file for reference:
 
-''''
+```
 version: '3.8'
 
 services:
@@ -161,29 +162,29 @@ services:
 networks:
   monitoring:
     driver: bridge
-''''
+```
 
-#Running the Project
+# Running the Project
 To start all services, use the following command:
-''''
+```
 docker-compose up -d
-''''
+```
 
 Once started, the following services will be available:
 
-- Node.js Web Application: '''' http://localhost:5000 ''''
-- Prometheus Dashboard: '''' http://localhost:9090 ''''
-- Grafana Dashboard: '''' http://localhost:3000 (default credentials: admin / admin) ''''
-- Alertmanager: '''' http://localhost:9093 ''''
-- cAdvisor: '''' http://localhost:8081 ''''
-- Node Exporter: Accessible to Prometheus at '''' http://localhost:9100 ''''
+- Node.js Web Application: ```http://localhost:5000```
+- Prometheus Dashboard: ```http://localhost:9090```
+- Grafana Dashboard: ```http://localhost:3000 (default credentials: admin / admin)```
+- Alertmanager: ```http://localhost:9093```
+- cAdvisor: ```http://localhost:8081```
+- Node Exporter: Accessible to Prometheus at ```http://localhost:9100```
 
-#Monitoring Setup
+# Monitoring Setup
 
-#Prometheus Configuration
+### Prometheus Configuration
 Prometheus collects metrics from the web application and system services. The configuration file (prometheus.yml) includes scraping jobs for both the app and the system:
 
-''''
+```
 scrape_configs:
   - job_name: 'nodejs-app'
     static_configs:
@@ -196,19 +197,19 @@ scrape_configs:
   - job_name: 'cadvisor'
     static_configs:
       - targets: ['cadvisor:8081']
-''''
+```
 
-#Grafana Setup
+### Grafana Setup
 Grafana connects to Prometheus for data visualization. You can configure Grafana by:
 
-Logging into Grafana at '''' http://localhost:3000. ''''
-Adding Prometheus as a data source '''' (URL: http://prometheus:9090). ''''
+Logging into Grafana at ```http://localhost:3000.```
+Adding Prometheus as a data source ```(URL: http://prometheus:9090).```
 Importing or creating custom dashboards for the collected metrics.
 
-#Alertmanager Setup
+### Alertmanager Setup
 Alertmanager manages alerts from Prometheus. Example alert configuration in prometheus.yml:
 
-''''
+```
 alerting:
   alertmanagers:
     - static_configs:
@@ -216,22 +217,22 @@ alerting:
 
 rule_files:
   - '../alertmanager/alertmanager.yml'
-''''
-Define custom alert rules in '''' alertmanager.yml '''' for Prometheus to trigger alerts.
+```
+Define custom alert rules in ```alertmanager.yml``` for Prometheus to trigger alerts.
 
 #Useful Commands
 - Stop the containers:
-''''
+```
 docker-compose down
-''''
+```
 - Rebuild the application:
-''''
+```
 docker-compose build
-''''
+```
 - review logs:
-''''
+```
 docker-compose logs
-''''
+```
 
-#Contributing
+### Contributing
 Contributions are welcome! Please open an issue or submit a pull request if you want to contribute to this project.
