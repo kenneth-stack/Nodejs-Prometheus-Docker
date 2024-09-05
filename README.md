@@ -18,7 +18,7 @@ This project demonstrates how to Dockerize a Node.js web application and monitor
 - [Useful Commands](#useful-commands)
 - [Contribution](#contribution)
 
-#Project Architecture
+# Project Architecture
 The project consists of the following components:
 
 - Node.js Web Application: A web application built using the Express framework.
@@ -30,26 +30,26 @@ The project consists of the following components:
 - Nginx: Acts as a reverse proxy for the web app.
 - Docker: Containerizes all components for easy deployment and management.
 
-#Features
+# Features
 - Dockerized Node.js web application for portability.
 - System monitoring and container resource usage via Prometheus, Node Exporter, and cAdvisor.
 - Real-time visualization with Grafana.
 - Alerts configured with Prometheus and managed by Alertmanager.
 - Reverse proxy with Nginx.
 
-#Prerequisites
+# Prerequisites
 Make sure you have the following installed on your machine:
 
 - Docker
 - Node.js
 - Prometheus
 
-#Installation
+## Installation
 1. Clone the repository:
-''''
+'''bash
 git clone <repository-url>
 cd <repository-folder>
-''''
+
 2. Ensure environment variables for Grafana are set in your .env file:
 ''''
 GF_SECURITY_ADMIN_USER=admin
@@ -60,7 +60,7 @@ GF_SECURITY_ADMIN_PASSWORD=admin
 docker-compose build
 ''''
 
-#Docker Compose Configuration
+# Docker Compose Configuration
 Your docker-compose.yml file orchestrates multiple services. Here's a brief overview of each service:
 
 - Node.js Web Application: The web app container exposed on port 5000.
