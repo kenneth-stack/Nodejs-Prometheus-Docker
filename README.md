@@ -220,7 +220,7 @@ rule_files:
 ```
 Define custom alert rules in ```alertmanager.yml``` for Prometheus to trigger alerts.
 
-#Useful Commands
+### Useful Commands
 - Stop the containers:
 ```
 docker-compose down
